@@ -307,9 +307,34 @@
     printf("Carta H04:\n - Populacao: %d\n - Area: %d Km²\n - PIB: R$ %d\n - Numero de pontos turisticos: %d\n - Densidade Populacional: %d habitante por Km²\n - PIB per Capita: R$ %d\n\n",  populacaoH04, areaH04, PIBH04, NPTH04, DPH04, PIBpCH04);
 
 
-    int H01;
+    int PC01sp, PC01pp, PC01ar, PC01pib, PC01npt, PC01dp, PC01pibc;
+    int PC02sp, PC02pp, PC02ar, PC02pib, PC02npt, PC02dp, PC02pibc;
+    char primeriracarta[4];
+    char segundacarta[4];
 
-    printf("Jogador 1, Escolha uma carta %d");
+
+
+    printf("Compare suas cartas!\n");
+
+    //Primeira carta
+    printf("Digite a primeira carta! Ex. (A01,A02..H04)\n");
+    scanf("%s", &primeriracarta);
+    printf("Digite as habilidades de sua carta na ordem exibida acima!\n");
+    scanf("%d %d %d %d %d %d %d", &PC01sp, &PC01pp, &PC01ar, &PC01pib, &PC01npt, &PC01dp, &PC01pibc);
+
+    //Segunda carta
+    printf("Digite a segunda carta! Ex. (A01,A02..H04)\n");
+    scanf("%s", &segundacarta);
+    printf("Digite as habilidades de sua carta na ordem exibida acima!\n");
+    scanf("%d %d %d %d %d %d %d", &PC02sp, &PC02pp, &PC02ar, &PC02pib, &PC02npt, &PC02dp, &PC02pibc);
+
+
+    //Resultado
+    printf("Aquele que possuir o maior quantida de numeros 1, venceu!\n\n");
+
+    printf("Resultado da carta: %s\n Super Poder: %d\n - Populacao: %d\n - Area: %d\n - PIB: %d\n - Numero de pontos turisticos: %d\n - Densidade Populacional: %d\n - PIB per Capita: %d\n\n", primeriracarta, PC01sp > PC02sp, PC01pp > PC02pp, PC01ar > PC02ar, PC01pib > PC02pib, PC01npt > PC02npt, PC01dp < PC02dp, PC01pibc > PC02pibc);
+    printf("Resultado da carta: %s\n Super Poder: %d\n - Populacao: %d\n - Area: %d\n - PIB: %d\n - Numero de pontos turisticos: %d\n - Densidade Populacional: %d\n - PIB per Capita: %d\n\n", segundacarta, PC02sp > PC01sp, PC02pp > PC01pp, PC02ar > PC01ar, PC02pib > PC01pib, PC02npt > PC01npt, PC02dp < PC01dp, PC02pibc > PC01pibc);
+
     
     
     
