@@ -307,9 +307,9 @@
     printf("Carta H04:\n - Populacao: %d\n - Area: %d Km²\n - PIB: R$ %d\n - Numero de pontos turisticos: %d\n - Densidade Populacional: %d habitante por Km²\n - PIB per Capita: R$ %d\n\n",  populacaoH04, areaH04, PIBH04, NPTH04, DPH04, PIBpCH04);
 
 
-    
+    int H01;
 
-
+    printf("Jogador 1, Escolha uma carta %d");
     
     
     
