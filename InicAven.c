@@ -1,6 +1,11 @@
 #include <stdio.h>
 
   int main() {
+
+   //NPT = Numero de pontos Turisticos
+   //DP = Densidade populacional
+   //PIBpC = PIB per Capita
+   //SP = Super poder 
     
     //estado A
     unsigned int NPTA01, NPTA02, NPTA03, NPTA04; 
@@ -9,6 +14,7 @@
     unsigned int PIBA01, PIBA02, PIBA03, PIBA04;
     unsigned int DPA01, DPA02, DPA03, DPA04;
     int PIBpCA01, PIBpCA02, PIBpCA03, PIBpCA04;
+    int SPA01, SPA02, SPA03, SPA04;
 
     //estado B
     unsigned int NPTB01, NPTB02, NPTB03, NPTB04; 
@@ -17,6 +23,7 @@
     unsigned int PIBB01, PIBB02, PIBB03, PIBB04;
     unsigned int DPB01, DPB02, DPB03, DPB04;
     int PIBpCB01, PIBpCB02, PIBpCB03, PIBpCB04;
+    int SP0B1, SPB02, SPB03, SPB04;
 
     //Estado C
     unsigned int NPTC01, NPTC02, NPTC03, NPTC04; 
@@ -25,6 +32,7 @@
     unsigned int PIBC01, PIBC02, PIBC03, PIBC04;
     unsigned int DPC01, DPC02, DPC03, DPC04;
     int PIBpCC01, PIBpCC02, PIBpCC03, PIBpCC04;
+    int SPC01, SPC02, SPC03, SPC04;
 
     //Estado D
     unsigned int NPTD01, NPTD02, NPTD03, NPTD04; 
@@ -33,6 +41,7 @@
     unsigned int PIBD01, PIBD02, PIBD03, PIBD04;
     unsigned int DPD01, DPD02, DPD03, DPD04;
     int PIBpCD01, PIBpCD02, PIBpCD03, PIBpCD04;
+    int SPD01, SPD02, SPD03, SPD04;
 
     //Estado E
     unsigned int NPTE01, NPTE02, NPTE03, NPTE04; 
@@ -41,6 +50,7 @@
     unsigned int PIBE01, PIBE02, PIBE03, PIBE04;
     unsigned int DPE01, DPE02, DPE03, DPE04;
     int PIBpCE01, PIBpCE02, PIBpCE03, PIBpCE04;
+    int SPE01, SPE02, SPE03, SPE04;
 
     //Estado F
     unsigned int NPTF01, NPTF02, NPTF03, NPTF04; 
@@ -49,6 +59,7 @@
     unsigned int PIBF01, PIBF02, PIBF03, PIBF04;
     unsigned int DPF01, DPF02, DPF03, DPF04;
     int PIBpCF01, PIBpCF02, PIBpCF03, PIBpCF04;
+    int SPF01, SPF02, SPF03, SPF04;
 
     //Estado G
     unsigned int NPTG01, NPTG02, NPTG03, NPTG04; 
@@ -57,6 +68,7 @@
     unsigned int PIBG01, PIBG02, PIBG03, PIBG04;
     unsigned int DPG01, DPG02, DPG03, DPG04;
     int PIBpCG01, PIBpCG02, PIBpCG03, PIBpCG04;
+    int SPG01, SPG02, SPG03, SPG04;
 
     //Estado H
     unsigned int NPTH01, NPTH02, NPTH03, NPTH04; 
@@ -65,17 +77,15 @@
     unsigned int PIBH01, PIBH02, PIBH03, PIBH04;
     unsigned int DPH01, DPH02, DPH03, DPH04;
     int PIBpCH01, PIBpCH02, PIBpCH03, PIBpCH04;
+    int SPH01, SPH02, SPH03, SPH04;
 
-
-   //NPT = Numero de pontos Turisticos
-   //DP = Densidade populacional
-   //PIBpC = PIB per Capita
-
+     
     // CARTA A01 a 04
     printf("Quantidade de população, área, PIB e o número de pontos turísticos da carta A01?: \n");
     scanf("%d %d %d %d", &populacaoA01, &areaA01, &PIBA01, &NPTA01);
     DPA01 = populacaoA01 / areaA01;
     PIBpCA01 = PIBA01 / populacaoA01;
+    SPA01 = populacaoA01 + areaA01 + PIBA01 + NPTA01 + DPA01 + PIBpCA01;
     
     printf("Quantidade de população, área, PIB e o número de pontos turísticos da carta A02?: \n");
     scanf("%d %d %d %d", &populacaoA02, &areaA02, &PIBA02, &NPTA02);
@@ -234,6 +244,11 @@
     DPH03 = populacaoH03 / areaH03;
     PIBpCH03 = PIBH03 / populacaoH03;
 
+    printf("Quantidade de população, área, PIB e o número de pontos turísticos da carta H04?: \n");
+    scanf("%d %d %d %d", &populacaoH04, &areaH04, &PIBH04, &NPTH04);
+    DPH04 = populacaoH04 / areaH04;
+    PIBpCH04 = PIBH04 / populacaoH04;
+
 
 
 
@@ -244,7 +259,7 @@
 
 
     // Estado A
-    printf("Carta A01:\n - Populacao: %d\n - Area: %d Km²\n - PIB: R$ %d\n - Numero de pontos turisticos: %d\n - Densidade Populacional: %d habitante por Km²\n - PIB per Capita: R$ %d\n\n",  populacaoA01, areaA01, PIBA01, NPTA01, DPA01, PIBpCA01);
+    printf("Carta A01 - Super Poder: %d\n - Populacao: %d\n - Area: %d Km²\n - PIB: R$ %d\n - Numero de pontos turisticos: %d\n - Densidade Populacional: %d habitante por Km²\n - PIB per Capita: R$ %d\n\n", SPA01, populacaoA01, areaA01, PIBA01, NPTA01, DPA01, PIBpCA01);
     printf("Carta A02:\n - Populacao: %d\n - Area: %d Km²\n - PIB: R$ %d\n - Numero de pontos turisticos: %d\n - Densidade Populacional: %d habitante por Km²\n - PIB per Capita: R$ %d\n\n",  populacaoA02, areaA02, PIBA02, NPTA02, DPA02, PIBpCA02);
     printf("Carta A03:\n - Populacao: %d\n - Area: %d Km²\n - PIB: R$ %d\n - Numero de pontos turisticos: %d\n - Densidade Populacional: %d habitante por Km²\n - PIB per Capita: R$ %d\n\n",  populacaoA03, areaA03, PIBA03, NPTA03, DPA03, PIBpCA03);
     printf("Carta A04:\n - Populacao: %d\n - Area: %d Km²\n - PIB: R$ %d\n - Numero de pontos turisticos: %d\n - Densidade Populacional: %d habitante por Km²\n - PIB per Capita: R$ %d\n\n",  populacaoA04, areaA04, PIBA04, NPTA04, DPA04, PIBpCA04);
